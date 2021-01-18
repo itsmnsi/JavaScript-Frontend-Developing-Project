@@ -1,0 +1,106 @@
+body
+{
+  background-color: rgb(163, 163, 163);
+}
+
+
+.ABCD:link{color:white; text-decoration:none;}
+.ABCD:visited{color:white;text-decoration:none;}
+.ABCD:hover{color:aqua;text-decoration:none;}
+.ABCD:active{color:white;text-decoration:none;}
+
+  .bbb:link{color:gray; text-decoration:none; font-size: 22px; font-weight: bold;}
+    .bbb:visited{color:gray;text-decoration:none;font-size: 22px;font-weight: bold;}
+    .bbb:hover{color:gray;text-decoration:none;font-size: 22px;font-weight: bold;}
+    .bbb:active{color:gray;text-decoration:none;font-size: 22px;font-weight: bold;}
+
+.ABC
+{
+    border-radius: 5px;
+    width: 113px;
+    height: 33px;
+    font-family: Roboto Condensed;
+    font-size: 15px;
+    font-weight: bold;
+    color: beige;
+    background-color:#333 ;
+    border: black;
+
+}
+
+
+.aa:link{color:rgb(93, 93, 93);; text-decoration:none;}
+.aa:visited{color:rgb(93, 93, 93);;text-decoration:none;}
+.aa:hover{color:rgb(93, 93, 93);;text-decoration:none;}
+.aa:active{color:rgb(93, 93, 93);;text-decoration:none;}
+
+.aaa:link{color:black; text-decoration:none; font-style: italic; }
+.aaa:visited{color:black; text-decoration:none;font-style: italic;}
+.aaa:hover{color:aqua; text-decoration:none;font-style: italic;}
+.aaa:active{color:black; text-decoration:none;font-style: italic;}
+
+.aaaaaa:link{color:white; text-decoration:none;  }
+.aaaaaa:visited{color:white; text-decoration:none;}
+.aaaaaa:hover{color:white; text-decoration:none;}
+.aaaaaa:active{color:white; text-decoration:none;}
+
+.aaaa:link{color:black; text-decoration:none; font-family: Georgia, Times, Times New Roman, serif; font-weight: normal; color: rgb(93, 93, 93); }
+.aaaa:visited{color:black; text-decoration:none; font-family: Georgia, Times, Times New Roman, serif; font-weight: normal; color: rgb(93, 93, 93); }
+.aaaa:hover{color:black; text-decoration:none; font-family: Georgia, Times, Times New Roman, serif; font-weight: normal; color: rgb(93, 93, 93); }
+.aaaa:active{color:black; text-decoration:none; font-family: Georgia, Times, Times New Roman, serif; font-weight: normal; color: rgb(93, 93, 93); }
+
+.aaaaa:link{color: inherit; text-decoration: none; background-color: rgb(58, 56, 56);padding: 9px;font-weight: bold; border-radius: 4px; margin-top: 1px;}
+.aaaaa:visited{color: inherit; text-decoration: none; background-color: rgb(58, 56, 56);padding: 9px;font-weight: bold; border-radius: 4px; margin-top: 1px;}
+.aaaaa:hover{color: aqua; text-decoration: none; background-color: rgb(58, 56, 56);padding: 9px;font-weight: bold; border-radius: 4px; margin-top: 1px;}
+.aaaaa:active{color: inherit; text-decoration: none; background-color: rgb(58, 56, 56);padding: 9px;font-weight: bold; border-radius: 4px; margin-top: 1px;}
+
+.aaaaaa:link{color: inherit; font-size: 0.83em; text-decoration: none; background-color: rgb(58, 56, 56);padding: 9px;font-weight: bold;border-radius: 4px;margin-top: 1px;  }
+.aaaaaa:visited{color: inherit; font-size: 0.83em;text-decoration: none; background-color: rgb(58, 56, 56);padding: 9px;font-weight: bold;border-radius: 4px;margin-top: 1px;}
+.aaaaaa:hover{color: inherit; font-size: 0.83em;text-decoration: none; background-color: rgb(58, 56, 56);padding: 9px;font-weight: bold;border-radius: 4px;margin-top: 1px;}
+.aaaaaa:active{color: inherit;font-size: 0.83em; text-decoration: none; background-color: rgb(58, 56, 56);padding: 9px;font-weight: bold;border-radius: 4px;margin-top: 1px;}
+
+.bb:link{color: inherit; font-size: 0.83em; text-decoration: none; background-color: rgb(58, 56, 56);padding: 9px;font-weight: bold;border-radius: 4px;margin-top: 1px;  }
+.bb:visited{color: inherit; font-size: 0.83em;text-decoration: none; background-color: rgb(58, 56, 56);padding: 9px;font-weight: bold;border-radius: 4px;margin-top: 1px;}
+.bb:hover{color: aqua; font-size: 0.83em;text-decoration: none; background-color: rgb(58, 56, 56);padding: 9px;font-weight: bold;border-radius: 4px;margin-top: 1px;}
+.bb:active{color: inherit;font-size: 0.83em; text-decoration: none; background-color: rgb(58, 56, 56);padding: 9px;font-weight: bold;border-radius: 4px;margin-top: 1px;}
+
+
+
+
+
+/* Style the icon bar links */
+.icon-bar a {
+  padding: 16px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Style the social media icons with color, if you want */
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+
+.linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.youtube {
+  background: #bb0000;
+  color: white;
+}
