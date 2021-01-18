@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title></title>
+    
+    <style>
+    .icon{
+    width: 40px;
+    position: relative;
+    right: 30px;
+    font-size: 18px;
+    line-height: 30px;
+    cursor: pointer
+    z-index: 1;
+    }
+    .wrapper {
+    margin: 0 auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 0;
+    }
+    #main{
+    background-color: black;
+    padding:10px;
+    }
+    #imgsec{
+    width:93%;
+    margin: 0 auto ;
+    overflow: hidden;
+    }
+    .col-sm-2
+    {
+    padding:10px;
+    }
+    .centered {
+    position: absolute;
+    top: 80%;
+    transform: translate(-50%, -50%);
+    height: 75px;
+    width: 500px;
+    background-color: black;
+    opacity: 0.5;
+    color:white;
+    }
+    .textcen {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:white;
+    font-size: 14px;
+    }
+    .img{
+    padding: 8px;
+    }
+    </style>
+    <script>
+    $(document).ready(function(){
+    $("#logo").click(function(){
+    window.location.href="index.html";
+    });
+    });
+    </script>
+  </head>
+  <body>
+    <header>
+      <div style="padding: 10px;border: 1px solid #293b14;" class="container-fluid header">
+        <div class="row" style="width: 92%;margin: 0 auto ">
+          <div class="col-sm-6 nav"><img id="logo" style="cursor: pointer;"  src="image/logo.jpg">
+            <a class="link" href="movie.html">Movie</a>
+            <a class="link" href="#">TV Series</a>
+            <a class="link" href="#">Audio</a>
+          </div>
+          <div class="col-sm-6"></div>
+        </div>
+      </div></header>
+      <div width="100%">
+        <div id="myCarousel" class="carousel slide">
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <img src="image/c1.jpg" alt="banner1" width="100%" height="100%">
+              <div class="carousel-caption">
+              </div>
+            </div>
+            <div class="item">
+              <img src="image/c2.jpg" alt="banner2" width="100%" height="100%">
+              <div class="carousel-caption">
+              </div>
+            </div>
+            
+            <div class="item">
+              <img src="image/c3.jpg" alt="banner3" width="100%" height="100%">
+              <div class="carousel-caption">
+              </div>
+            </div>
+            <div class="item">
+              <img src="image/c4.jpg" alt="banner4" width="100%" height="100%">
+              <div class="carousel-caption">
+              </div>
+            </div>
+            
+          </div>
+          <a class="left carousel-control" href="#myCarousel" role="button">
+            <span class="glyphicon glyphicon-chevron-left" ></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" role="button">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      <script>
+      $(document).ready(function(){
+      // Activate Carousel
+      $("#myCarousel").carousel();
+      
+      // Enable Carousel Indicators
+      $(".item1").click(function(){
+      $("#myCarousel").carousel(0);
+      });
+      $(".item2").click(function(){
+      $("#myCarousel").carousel(1);
+      });
+      $(".item3").click(function(){
+      $("#myCarousel").carousel(2);
+      });
+      $(".item4").click(function(){
+      $("#myCarousel").carousel(3);
+      });
+      
+      // Enable Carousel Controls
+      $(".left").click(function(){
+      $("#myCarousel").carousel("prev");
+      });
+      $(".right").click(function(){
+      $("#myCarousel").carousel("next");
+      });
+      });
+      </script>
+      <script>
+      function searchName() {
+      var input, filter, table, boxes, td,h5, i, txtValue,check=false;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      boxes = table.getElementsByClassName("boxes");
+      for (i = 0; i < boxes.length; i++) {
+      h5 = boxes[i].getElementsByTagName("h5");
+      
+      if (h5) {
+      txtValue = h5[0].textContent;
+      console.log(txtValue);
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      boxes[i].style.display = "";
+      check = true;
+      } else {
+      boxes[i].style.display = "none";
+      }
+      }
+      }
+      if(check==false)
+      {
+      document.getElementById("notfound").style.display="block";
+      document.getElementById("notfound").innerHTML="No Movie Found";
+      }
+      else
+      {
+      document.getElementById("notfound").style.display="none";
+      }
+      }
+      function selectName() {
+      var input, filter, table, boxes, td,h6, i, txtValue,check=false;
+      input = document.getElementById("select").value;
+      filter = input.toUpperCase();
+      if (filter=="GENERE") {
+      return false;
+      }
+      table = document.getElementById("myTable");
+      boxes = table.getElementsByClassName("boxes");
+      if(filter=="ALL")
+      {
+      for (i = 0; i < boxes.length; i++) {
+      document.getElementsByClassName("boxes")[i].style.display="inline";
+      
+      }
+      return false;
+      }
+      for (i = 0; i < boxes.length; i++) {
+      h6 = boxes[i].getElementsByTagName("h6");
+      
+      if (h6) {
+      txtValue = h6[0].textContent ||  h6[0].innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      boxes[i].style.display = "";
+      check = true;
+      } else {
+      boxes[i].style.display = "none";
+      
+      }
+      }
+      }
+      
+      }
+      </script>
+      
+      <div style="padding-bottom: 200px;" id="main" class="container-fluid">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-1">
+              <select id="select" style="width: 150px;height: 30px;background-color: yellow;border-radius: 4px" onchange="selectName()">4
+                <option value="Genere" >Genere</option>
+                <option value="all">All</option>
+                <option value="action">Action</option>
+                <option value="drama">Drama</option>
+                <option value="comedy">Comedy</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+              </select>
+            </div>
+            <div class="col-sm-11">
+              <div class="wrapper">
+                <input type="text"  onkeyup="searchName()" style="text-align: center;background-color: yellow;border:1px solid grey;border-radius: 4px" placeholder="search your favourite movie title" id="myInput" class="input">
+                <i class="icon fa fa-search" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div id="imgsec">
+          <div style="margin: 0 auto;" id="myTable" class="row" >
+            <center><h3 id="notfound" style="margin-top: 20px;color:white"></h3></center>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img19.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Haider</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">Thriller, Mystery</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img20.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Dream 2</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">Tragedy film.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img21.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Batman</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">A Marvel Comics superhero team.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img22.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Monster Manav</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">Japanese manga series written by Tsugumi.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img23.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Kill Bill</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">2003 American martial arts film.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img24.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Rowdy</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">Indian action drama film.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img25.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Agnipath</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">Action.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img26.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Ankhen</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">crime tragedy film.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img27.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Guide</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">Thriller Mystery</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img28.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Deewar</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">Indian Thriller.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img29.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Sholay</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">Blockbuster.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img30.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">K3G</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">Historic Drama</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img31.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Shaurya</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">Thriller Mystery & Comedy.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img32.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Cheeni Kam</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">Indian crime tragedy film.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img33.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Ishq Vishq</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">A Marvel Comics superhero team.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img34.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Padmaavat</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">Japanese manga series written by Tsugumi.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img35.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Kai Po Che</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">2003 American martial arts film.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img36.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Interstellar</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">Hollywood Sci-Fi.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img37.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Thor</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">Thriller Mystery & Comedy.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img38.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Captain America</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">Action Thriller Sci-Fi</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img39.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">X-Men</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">Action Sci-Fi</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img40.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Black Widow</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">Japanese manga series written by Tsugumi.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img41.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Iron-Man</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">2003 American martial arts film.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img42.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Hulk</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">Indian action drama film.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img43.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Captain Marvel</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">Thriller Mystery & Comedy.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img44.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Wonder Woman</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">Indian crime tragedy film.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img45.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Batwoman</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">A Marvel Comics superhero team.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img46.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Batman</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">Japanese manga series written by Tsugumi.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img47.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Superman</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">2003 American martial arts film.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img48.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Superwoman</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">Indian action drama film.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img49.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Doctor Strange</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">Thriller Mystery & Comedy.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img50.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Mars</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">Indian crime tragedy film.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img51.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Gravity</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">A Marvel Comics superhero team.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img52.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Bohemian</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">Japanese manga series written by Tsugumi.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img53.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Justice League</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">2003 American martial arts film.</h6>
+            </div>
+            <div class="col-sm-2 boxes">
+              <img style="height:170px;width: 210px" class="img" src="image/img54.jpg">
+              <div class="centered"></div>
+              <h5 class="textcen">Borgia</h5>
+              <h6 align="center" style="font-size: 11px;top: 83%;" class="textcen">Indian action drama film.</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div style="padding: 10px;border: 1px solid #293b14;" class="container-fluid header">
+        <div class="row" style="width: 92%;margin: 0 auto ">
+          <div class="col-sm-6 foot"><img id="logo"  src="logo.jpg">
+            <a" href="">Powered by 365 Entertainment Portal 2019.</a>
+          </div>
+          <div class="col-sm-6"></div>
+        </div>
+      </div>
+    </body>
+  </html>
