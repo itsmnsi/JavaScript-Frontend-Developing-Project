@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Quiz</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+</head>
+<body>
+ 
+ <div class="fluid-container">
+ 	<div style="padding-top:20px" class="row">
+ 		<div class="col-sm-1"></div>
+  		<div class="col-sm-2"><img style="height:90px" src="logo.png"></div>
+ 		<div style="padding-top:20px" class="col-sm-6"><center><h2>Alpha Quiz System</h2></center></div>
+ 		<div class="col-sm-3"></div>
+
+ 	</div>
+ 	<hr>
+ </div>
+
+
+<div style="padding-top:20px" class="row">
+ 		<div class="col-sm-3"></div>
+ 		<div class="col-sm-6">
+ 			<div class="card">
+  				<div style="color:white;background-color: #337AB7" class="card-header">User Login</div>
+  				<div class="card-body">
+   				  <div class="input-group mb-3">
+      				<div class="input-group-prepend">
+        					<span style="font-size: 24px" class="input-group-text fa fa-user"></span>
+      						</div>
+      					<input type="text" class="form-control" placeholder="Username" id="usr" name="username" value="admin">
+    					</div>
+
+    			 			<div class="input-group mb-3">
+      							<div class="input-group-prepend">
+        					<span style="font-size: 24px" class="input-group-text fa fa-lock"></span>
+      						</div>
+      						<input type="password" class="form-control" placeholder="password" id="pass" name="password" value="1234">
+    					</div>
+
+    					<a href="#" class="btn btn-success col-sm-12" onclick="run();" id="login">Submit</a>
+  					</div>
+			</div>
+ 		</div>
+ 		<div class="col-sm-3"></div>
+
+ 	</div>
+</div>
+<script type="text/javascript" src="data.json"></script>
+<script type="text/javascript">
+function run(){
+  	var username = $("#usr").val();
+  	 var password = $("#pass").val();
+  	 var mydata = JSON.parse(datalogin);
+	jname = mydata[0].name;
+	jpass = mydata[0].pass;
+	if(jname  == username && jpass == password)
+	{
+		alert("Login success");
+		window.location.replace("quizrules.html");
+	}
+	else
+	{
+		alert("Login failed");
+	}
+
+}
+
+</script>
+
+</body>
+</html>

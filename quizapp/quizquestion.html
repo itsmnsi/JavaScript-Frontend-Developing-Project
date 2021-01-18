@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script type="text/javascript" src="json/datasec.json"></script>
+</head>
+<body>
+ <script>
+  
+   
+   $(document).ready(function(){
+ var counter = 1;
+      var arr = [];
+      var x,y="checked";
+
+      $("#box").hide();
+
+       var mydata = JSON.parse(data);
+       jopt1 = mydata[counter-1].options[0];
+       jopt2 = mydata[counter-1].options[1];
+       jopt3 = mydata[counter-1].options[2];
+       jopt4 = mydata[counter-1].options[3];
+       jque = mydata[counter-1].que;
+       jans = mydata[counter-1].ans;
+
+
+   document.getElementById("radio1").innerHTML =jopt1;
+   document.getElementById("radio2").innerHTML =jopt2;
+   document.getElementById("radio3").innerHTML =jopt3;
+   document.getElementById("radio4").innerHTML =jopt4;
+   document.getElementById("head").innerHTML =jque;
+  
+
+    $("#next").click(function(){
+
+      function next(){
+              $("#box").hide();
+
+
+        $("#rad1,#rad2,#rad3,#rad4").prop("checked", false);
+
+        if(counter==18)
+        {
+          document.getElementById("next").innerHTML ="Finish Quiz";
+        }
+
+        if(counter == 20)
+        {
+          window.localStorage.setItem("arr", JSON.stringify(arr));
+          window.location.replace("final.php");
+          return false;   
+        }
+        
+        arr.push(x);
+        
+
+      counter++;
+      if(counter>0)
+        {
+          $("#pre").css("background-color","#28A745");
+        }
+
+
+    var mydata = JSON.parse(data);
+   
+    for(index2 = 0; index2<4; index2++)
+    {
+    jopt = mydata[counter].options[index2];
+    if(index2==0)
+    {
+    document.getElementById("radio1").innerHTML =jopt;
+  }
+  else if(index2==1)
+  {
+    document.getElementById("radio2").innerHTML =jopt;
+  }
+  else if(index2==2)
+  {
+    document.getElementById("radio3").innerHTML =jopt;
+  }
+  else
+  {
+    document.getElementById("radio4").innerHTML =jopt;
+  }
+    };
+    jans = mydata[counter].ans;
+    jque = mydata[counter].que;
+    document.getElementById("head").innerHTML =jque;
+    //document.getElementById("alr").innerHTML =jans;  
+    x="undefined";
+}
+
+next();
+
+    });
+
+    $("#pre").click(function(){
+   function pre(){
+
+          $("#box").hide();
+
+          if(counter < 20)
+        {
+          document.getElementById("next").innerHTML ="Next";
+        }
+
+    if(counter==0)
+        {
+          $("#pre").css("background-color","lightgreen");
+          return false;
+        }
+          
+    counter--;
+
+
+    var mydata = JSON.parse(data);
+   
+    for(index2 = 0; index2<4; index2++)
+    {
+    jopt = mydata[counter].options[index2];
+    if(index2==0)
+    {
+    document.getElementById("radio1").innerHTML =jopt;
+  }
+  else if(index2==1)
+  {
+    document.getElementById("radio2").innerHTML =jopt;
+  }
+  else if(index2==2)
+  {
+    document.getElementById("radio3").innerHTML =jopt;
+  }
+  else
+  {
+    document.getElementById("radio4").innerHTML =jopt;
+  }
+    };
+    jque = mydata[counter].que;
+    document.getElementById("head").innerHTML =jque;
+  
+
+}
+pre();
+
+    });
+ 
+    
+    $("#rad1,#rad2,#rad3,#rad4").click(function(){
+
+      $("#box").show();
+
+    document.getElementById("alrt").innerHTML ="correct answer is : "+mydata[counter].ans;
+        x = $(this).data("value");
+
+
+       
+    })
+
+    
+  });
+           
+ </script>
+
+
+
+
+
+
+ <div class="fluid-container">
+  <div style="padding-top:20px" class="row">
+    <div class="col-sm-1"></div>
+      <div class="col-sm-2"><img style="height:90px" src="logo.png"></div>
+    <div style="padding-top:20px" class="col-sm-6"><center><h2>Alpha Quiz System</h2></center></div>
+    <div style="padding-top:70px" class="col-sm-3">
+      
+  </div>
+
+  </div>
+  <hr>
+ </div>
+
+<div style="padding-top:20px" class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <div class="card">
+          <div style="color:white;background-color: #337AB7" class="card-header" id="head"></div>
+          <div class="card-body">
+
+            <input type="radio" name="ans" id="rad1" value="1" data-value="1">&nbsp;&nbsp;<label id="radio1"></label><br/>
+            <input type="radio" name="ans" id="rad2" value="2" data-value="2">&nbsp;&nbsp;<label id="radio2"></label><br>
+            <input type="radio" name="ans" id="rad3"  value="3" data-value="3">&nbsp;&nbsp;<label id="radio3"></label><br>
+            <input type="radio" name="ans" id="rad4"  value="4" data-value="4">&nbsp;&nbsp;<label id="radio4"></label>
+            
+           <div id="box" class="alert alert-success alert-sm">
+             <h6 id="alrt" class="alert-link"></h6>
+          </div>
+        
+          <div class="card-footer text-muted">
+                 <table ><tr>
+              <th><a href="#" class="btn btn-success btn-md" id="pre">Previous</a></th>
+             <th>&nbsp;<a href="#" class="btn btn-success btn-md" id="next">Next</a></th>
+
+
+              </tr></table>
+    
+          </div>
+      </div>
+    </div>
+    <div class="col-sm-3"></div>
+
+  </div>
+
+
+</body>
+</html>

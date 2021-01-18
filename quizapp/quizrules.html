@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Quiz</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+ 
+ <div class="fluid-container">
+ 	<div style="padding-top:20px" class="row">
+ 		<div class="col-sm-1"></div>
+  		<div class="col-sm-2"><img style="height:90px" src="logo.png"></div>
+ 		<div style="padding-top:20px" class="col-sm-6"><center><h2>Alpha Quiz System</h2></center></div>
+ 		<div style="padding-top:70px" class="col-sm-3">
+      <h6>
+        <span style="background-color:#F3EDED;border-radius: 0;" class="badge badge-default">Total Numer of test takers:</span>
+    </h6>
+  </div>
+
+ 	</div>
+ 	<hr>
+ </div>
+
+
+
+<div style="padding-top:20px" class="row">
+ 		<div class="col-sm-1"></div>
+ 		<div class="col-sm-10">
+ 			<div class="card">
+  				<div style="color:white;background-color: #337AB7" class="card-header">Rules and regulations for the Quiz</div>
+  				<div class="card-body">
+   			      <ol style="font-size: 15px; color:#337CBE">
+
+
+
+                <li>Quiz will contain total 20 questions.</li>
+                <li>One point will be awarded for each correct answer.</li>
+                <li>No half marks will be awarded.</li>
+
+                <li>Each question has 4 options.</li>
+                <li>Do not refresh the page.</li>
+                <li>Final score will be shown after the submission of the quiz.</li>
+
+                <li>Do not move out of the quiz window else your quiz will be auto submitted.</li>
+           
+              </ol>
+       
+         
+
+  				</div>
+          <div class="card-footer text-muted ">
+            <div id="tr1" style="height:50px;">
+                 <table >
+                  <tr>
+              <th width="100px" style="padding-left: 20px;"><input type="checkbox" name="agree" id="agree" value="check">I Agree</th>
+             <th style="padding-top: 8px;"><a href="#" class="btn btn-success btn-sm" onclick="check();">Submit</a></th>
+
+
+              </tr></table>
+    
+          </div>
+			</div>
+    </div>
+ 		</div>
+ 		<div class="col-sm-1"></div>
+
+ 	</div>
+
+<script type="text/javascript">
+  function check()
+  {
+    var checkBox = document.getElementById("agree");
+
+    if (checkBox.checked == true){
+    window.location.replace("quizquestion.html");
+  } else {
+    $("#tr1").css("background-color","#F2DEDE");
+    
+  }
+  }
+</script>
+
+
+
+
+</body>
+</html>
